@@ -1,0 +1,71 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.3.1",
+    "@material-ui/icons": "^4.2.1",
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "express-session": "1.15.6",
+    "history": "4.7.2",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "^4.17.15",
+    "material-ui": "^0.20.2",
+    "mongodb": "^3.5.2",
+    "mongoose": "^5.8.11",
+    "node-sass": "^4.13.1",
+    "prettier": "1.18.2",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "react-multi-carousel": "^2.2.2",
+    "react-rating": "^1.7.2",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "star-server": "node server",
+    "build": "react-scripts build",
+    "sass-lint": "sass-lint -v -q",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run sass-lint"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "eslint src/ --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.12.4",
+    "husky": "3.0.2",
+    "lint-staged": "9.2.1",
+    "pretty-quick": "1.11.1",
+    "sass-lint": "1.12.1",
+    "nodemon": "1.19.1"
+  }
+}

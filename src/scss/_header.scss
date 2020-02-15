@@ -1,0 +1,228 @@
+.headerContainer {
+  background: white;
+  height: 80px;
+  border-bottom: 1px lightgrey solid;
+  width: 100%;
+  margin-top: 0px;
+}
+
+.subHeader {
+  vertical-align: top;
+  width: 50%;
+  display: inline-block;
+  height: 80px;
+}
+
+.headerMenuContainer {
+  display: inline-block;
+  position: relative;
+  height: 200px;
+}
+
+.headerMenuName {
+  margin: 0;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  margin-top: 30px;
+  height: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.headerSelected {
+  border-bottom: 3px red solid;
+}
+
+.headerMenuName:hover {
+  border-bottom: 3px red solid;
+}
+
+.headerMenu {
+  width: 150px;
+  background: white;
+  border-radius: 1px;
+  position: absolute;
+  top: 80px;
+  left: -46px;
+  font-size: 14px;
+}
+
+.headerMenuSegment {
+  margin: 0px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  border: lightgray solid 1px;
+  cursor: pointer;
+  margin-top: -1px;
+  margin-left: -1px;
+  transition: 0.5s;
+  font-weight: 500;
+  font-variant: small-caps;
+  font-size: 12px;
+}
+
+.headerMenuSegment:hover {
+  background: rgb(245, 245, 245);
+  color: black;
+}
+
+.headerLogo {
+  height: 50px;
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: 50px;
+  float: left;
+  cursor: pointer;
+}
+
+.headerContainer input {
+  outline-color: red;
+  height: 25px;
+  width: 200px;
+  margin-top: 22px;
+  float: left;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+.headerContainer input:focus {
+  border: red 1px solid;
+  padding: 3px;
+}
+
+.subHeaderIcon {
+  margin-top: 20px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.headerMobileMenuContainer {
+  display: none;
+}
+
+.mobileMenuContainer {
+}
+
+.mobileMenuSegment:focus {
+  background: green;
+}
+
+.mobileMenuContent {
+  margin: auto;
+  margin-top: -20px;
+  font-size: 13px;
+  color: black;
+}
+
+.mobileMenuContent p {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.mobileMenuContent p:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.searchContainer {
+  position: relative;
+  width: 175px;
+  margin: auto;
+  margin-top: 3px;
+  text-align: center;
+  display: inline-block;
+}
+
+.searchResults {
+  position: absolute;
+  width: 210px;
+  left: 99px;
+  top: 56px;
+  background: white;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.searchResultsSegment {
+  height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: lightgray solid 1px;
+  cursor: pointer;
+  margin-top: -1px;
+  transition: 0.5s;
+}
+
+.searchResultsSegment:hover {
+  background: rgb(245, 245, 245);
+}
+
+.searchResultsSegmentName {
+  font-weight: bold;
+  margin-top: 7px;
+  margin-bottom: 0px;
+  margin-left: 65px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.searchResultsSegmentImg {
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin-left: 5px;
+}
+
+.searchResultsSegmentInfo {
+  margin-top: 5px;
+  margin-left: 65px;
+  font-size: 11px;
+  color: grey;
+  text-align: left;
+}
+
+@media only screen and (max-width: 960px) {
+  .searchResults {
+    left: -1px;
+    top: 54px;
+  }
+
+  .leftSubHeader {
+    display: none;
+  }
+
+  .rightSubHeader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .headerContainer input {
+    float: none;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .subHeaderIcon {
+    margin-top: 25px;
+    margin-left: 0px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .headerMobileMenuContainer {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 27px;
+  }
+
+  .headerMobileMenu {
+    cursor: pointer;
+    display: block;
+  }
+}

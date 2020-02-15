@@ -1,0 +1,145 @@
+.productHome {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.productImg {
+  width: 90%;
+}
+
+.productTitle {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.productPrice {
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 20%;
+  margin-bottom: 20px;
+}
+
+.productRating {
+  font-size: 20px;
+  display: inline;
+  color: grey;
+  z-index: -1;
+}
+
+.sizeSquare {
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  color: black;
+  border: 2px solid lightgrey;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.activeSquare {
+  border: 2px solid red;
+  background: red;
+  color: white;
+}
+
+.styleSquare {
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid lightgrey;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.styleSquare:hover {
+  border: 2px solid red;
+}
+
+.activeStyleSquare {
+  border: 2px solid red;
+}
+
+.sizeSquare:hover {
+  cursor: pointer;
+  border: 2px solid red;
+}
+
+.productBtn {
+  cursor: pointer;
+  background: #f00000;
+  display: block;
+  border: none;
+  height: 50px;
+  width: 250px;
+  color: white;
+  font-size: 16px;
+  margin-top: 80px;
+  transition: 0.3s;
+}
+
+.productBtn:hover {
+  cursor: pointer;
+  background: #c20000;
+  display: block;
+  border: none;
+  height: 50px;
+  width: 250px;
+  color: white;
+  font-size: 16px;
+  margin-top: 80px;
+}
+
+.reviewLabel {
+  font-size: 14px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.reviewLabel:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.productDescription {
+  padding-right: 20px;
+}
+
+@media only screen and (max-width: 960px) {
+  .styleSquare {
+    width: 60px;
+    height: 60px;
+  }
+  .productTitle {
+  }
+
+  .productHome {
+    text-align: center;
+  }
+
+  .productPrice {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  .productRating {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .productBtn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .productDescription {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

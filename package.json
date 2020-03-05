@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://deniro5.github.io/clothingStore/",
   "dependencies": {
     "@material-ui/core": "^4.3.1",
     "@material-ui/icons": "^4.2.1",
@@ -31,7 +32,9 @@
     "build": "react-scripts build",
     "sass-lint": "sass-lint -v -q",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
@@ -62,10 +65,11 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.12.4",
+    "gh-pages": "^2.2.0",
     "husky": "3.0.2",
     "lint-staged": "9.2.1",
+    "nodemon": "1.19.1",
     "pretty-quick": "1.11.1",
-    "sass-lint": "1.12.1",
-    "nodemon": "1.19.1"
+    "sass-lint": "1.12.1"
   }
 }

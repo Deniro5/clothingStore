@@ -64,6 +64,9 @@
   border-left: 1px solid grey;
   border-right: 1px solid grey;
   transition: 0.5s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 
 .shopmenu-items div:hover {

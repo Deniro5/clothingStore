@@ -123,7 +123,7 @@ class Home extends Component {
         <div className="homeMainImageContainer">
           <Grid container spacing={0} align="center">
             <Grid item xs={12} sm={12} md={6}>
-              <img alt="placeholder" src="../img/mensad1.gif" />
+              <img alt="placeholder" src="imgs/mensad1.gif" />
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
               <h2> New Arrivals </h2>
@@ -146,11 +146,11 @@ class Home extends Component {
         <div className="homeSecondaryImageContainer">
           <Grid container spacing={0} align="center">
             <Grid item xs={12} sm={12} md={6}>
-              <img alt="placeholder" src="../img/mensad1.jpg" />
+              <img alt="placeholder" src="imgs/mensad1.jpg" />
               <button> See More </button>
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <img alt="placeholder" src="../img/mensad2.jpg" />
+              <img alt="placeholder" src="imgs/mensad2.jpg" />
               <button> See More </button>
             </Grid>
           </Grid>
@@ -158,7 +158,7 @@ class Home extends Component {
         <div className="homeMainImageContainer">
           <Grid container spacing={0} align="center">
             <Grid item xs={12} sm={12} md={6}>
-              <img alt="placeholder" src="../img/mensad3.jpg" />
+              <img alt="placeholder" src="imgs/mensad3.jpg" />
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
               <h2> Featured </h2>

@@ -3,9 +3,9 @@ const accessories = [
     'Belt',
     '100% Real Leather',
     [
-      '../img/accessory1.jpg',
-      '../img/accessory1b.jpg',
-      '../img/accessory1c.jpg'
+      'imgs/accessory1.jpg',
+      'imgs/accessory1b.jpg',
+      'imgs/accessory1c.jpg'
     ],
     '$19.99',
     3.5,
@@ -16,11 +16,11 @@ const accessories = [
     'Bucket Hat',
     'Made in England',
     [
-      '../img/accessory2.jpg',
-      '../img/accessory2b.jpg',
-      '../img/accessory2c.jpg',
-      '../img/accessory2d.jpg',
-      '../img/accessory2e.jpg'
+      'imgs/accessory2.jpg',
+      'imgs/accessory2b.jpg',
+      'imgs/accessory2c.jpg',
+      'imgs/accessory2d.jpg',
+      'imgs/accessory2e.jpg'
     ],
     '$19.99',
     4.5,
@@ -30,7 +30,7 @@ const accessories = [
   [
     'Baseball Cap',
     'Made in Japan',
-    ['../img/accessory3.jpg', '../img/accessory3b.jpg'],
+    ['imgs/accessory3.jpg', 'imgs/accessory3b.jpg'],
     '$9.99',
     3,
     3,
@@ -39,7 +39,7 @@ const accessories = [
   [
     'Backpack',
     'Made in China',
-    ['../img/accessory4.jpg'],
+    ['imgs/accessory4.jpg'],
     '$41.99',
     3,
     4,
@@ -48,7 +48,7 @@ const accessories = [
   [
     'Purse',
     'Made in England',
-    ['../img/accessory5.jpg', '../img/accessory5b.jpg'],
+    ['imgs/accessory5.jpg', 'imgs/accessory5b.jpg'],
     '$23.99',
     5,
     5,
@@ -58,10 +58,10 @@ const accessories = [
     'Plain Tie',
     'Made in Norway',
     [
-      '../img/accessory6.jpg',
-      '../img/accessory6b.jpg',
-      '../img/accessory6c.jpg',
-      '../img/accessory6d.jpg'
+      'imgs/accessory6.jpg',
+      'imgs/accessory6b.jpg',
+      'imgs/accessory6c.jpg',
+      'imgs/accessory6d.jpg'
     ],
     '$39.99',
     4,
@@ -72,10 +72,10 @@ const accessories = [
     'Bowtie',
     'Made in Ukraine',
     [
-      '../img/accessory7.jpg',
-      '../img/accessory7a.jpg',
-      '../img/accessory7b.jpg',
-      '../img/accessory7c.jpg'
+      'imgs/accessory7.jpg',
+      'imgs/accessory7a.jpg',
+      'imgs/accessory7b.jpg',
+      'imgs/accessory7c.jpg'
     ],
     '$19.99',
     2.5,
@@ -85,7 +85,7 @@ const accessories = [
   [
     'Gold Ring',
     '100% Real Gold',
-    ['../img/accessory8.jpg'],
+    ['imgs/accessory8.jpg'],
     '$399.99',
     4.5,
     8,
@@ -94,7 +94,7 @@ const accessories = [
   [
     'Silver Necklace',
     '100% Real Silver',
-    ['../img/accessory9.jpg'],
+    ['imgs/accessory9.jpg'],
     '$999.99',
     5,
     9,
@@ -107,10 +107,10 @@ const hoodies = [
     'Twice Sweater',
     '100% Real Cotton',
     [
-      '../img/hoodie1.jpg',
-      '../img/product3.jpg',
-      '../img/product4.jpg',
-      '../img/product5.jpg'
+      'imgs/hoodie1.jpg',
+      'imgs/product3.jpg',
+      'imgs/product4.jpg',
+      'imgs/product5.jpg'
     ],
     '$29.99',
     5,
@@ -120,7 +120,7 @@ const hoodies = [
   [
     'Nike Sweater',
     'Made in England',
-    ['../img/hoodie2.jpg', '../img/hoodie2a.jpg', '../img/hoodie2b.jpg'],
+    ['imgs/hoodie2.jpg', 'imgs/hoodie2a.jpg', 'imgs/hoodie2b.jpg'],
     '$49.99',
     4.5,
     11,
@@ -129,7 +129,7 @@ const hoodies = [
   [
     'Adidas Sweater ',
     'Made in Japan',
-    ['../img/hoodie3.jpg', '../img/hoodie3a.jpg'],
+    ['imgs/hoodie3.jpg', 'imgs/hoodie3a.jpg'],
     '$29.99',
     2.5,
     12,
@@ -138,7 +138,7 @@ const hoodies = [
   [
     'Umbro Sweater',
     'Made in Australia',
-    ['../img/hoodie4.jpg', '../img/hoodie4a.jpg'],
+    ['imgs/hoodie4.jpg', 'imgs/hoodie4a.jpg'],
     '$42.99',
     4,
     13,
@@ -148,10 +148,10 @@ const hoodies = [
     'Plain Sweater',
     'Made in Norway',
     [
-      '../img/hoodie5.jpg',
-      '../img/hoodie5a.jpg',
-      '../img/hoodie5b.jpg',
-      '../img/hoodie5c.jpg'
+      'imgs/hoodie5.jpg',
+      'imgs/hoodie5a.jpg',
+      'imgs/hoodie5b.jpg',
+      'imgs/hoodie5c.jpg'
     ],
     '$33.99',
     5,
@@ -161,7 +161,7 @@ const hoodies = [
   [
     'Champion Sweater',
     '100% Real Cotton',
-    ['../img/hoodie6.jpg', '../img/hoodie6a.jpg', '../img/hoodie6b.jpg'],
+    ['imgs/hoodie6.jpg', 'imgs/hoodie6a.jpg', 'imgs/hoodie6b.jpg'],
     '$29.99',
     4,
     15,
@@ -170,7 +170,7 @@ const hoodies = [
   [
     'Vans Sweater',
     'Made in Ukraine',
-    ['../img/hoodie7.jpg', '../img/hoodie7a.jpg'],
+    ['imgs/hoodie7.jpg', 'imgs/hoodie7a.jpg'],
     '$49.99',
     3.5,
     16,
@@ -180,11 +180,11 @@ const hoodies = [
     'Tommy Hilfiger',
     '100% Real Cotton',
     [
-      '../img/hoodie8.jpg',
-      '../img/hoodie8a.jpg',
-      '../img/hoodie8b.jpg',
-      '../img/hoodie8c.jpg',
-      '../img/hoodie8d.jpg'
+      'imgs/hoodie8.jpg',
+      'imgs/hoodie8a.jpg',
+      'imgs/hoodie8b.jpg',
+      'imgs/hoodie8c.jpg',
+      'imgs/hoodie8d.jpg'
     ],
     '$79.99',
     4,
@@ -194,7 +194,7 @@ const hoodies = [
   [
     'Supreme Hoodie',
     'Made in California',
-    ['../img/hoodie9.jpg', '../img/hoodie9a.jpg'],
+    ['imgs/hoodie9.jpg', 'imgs/hoodie9a.jpg'],
     '$44.99',
     3,
     18,
@@ -206,7 +206,7 @@ const jeans = [
   [
     'Brooklyn Jeans',
     '100% Real Denim',
-    ['../img/jeans1.jpg', '../img/jeans1a.jpg', '../img/jeans1b.jpg'],
+    ['imgs/jeans1.jpg', 'imgs/jeans1a.jpg', 'imgs/jeans1b.jpg'],
     '$39.99',
     3,
     19,
@@ -215,7 +215,7 @@ const jeans = [
   [
     'Zoo York Jeans',
     'Made in England',
-    ['../img/jeans2.jpg', '../img/jeans2a.jpg'],
+    ['imgs/jeans2.jpg', 'imgs/jeans2a.jpg'],
     '$39.99',
     3.5,
     20,
@@ -224,7 +224,7 @@ const jeans = [
   [
     'Abercrombie Jeans ',
     'Made in Japan',
-    ['../img/jeans3.jpg'],
+    ['imgs/jeans3.jpg'],
     '$29.99',
     5,
     21,
@@ -233,7 +233,7 @@ const jeans = [
   [
     'True Religion Jeans',
     'Made in Australia',
-    ['../img/jeans4.jpg', '../img/jeans4a.jpg', '../img/jeans4b.jpg'],
+    ['imgs/jeans4.jpg', 'imgs/jeans4a.jpg', 'imgs/jeans4b.jpg'],
     '$22.99',
     4,
     22,
@@ -242,7 +242,7 @@ const jeans = [
   [
     'Tommy Hilfiger Jeans',
     'Made in Norway',
-    ['../img/jeans5.jpg', '../img/jeans5a.jpg'],
+    ['imgs/jeans5.jpg', 'imgs/jeans5a.jpg'],
     '$23.99',
     4,
     23,
@@ -251,7 +251,7 @@ const jeans = [
   [
     'Ralph Lauren Jeans',
     '100% Real Denim',
-    ['../img/jeans6.jpg', '../img/jeans6a.jpg'],
+    ['imgs/jeans6.jpg', 'imgs/jeans6a.jpg'],
     '$49.99',
     3,
     24,
@@ -260,7 +260,7 @@ const jeans = [
   [
     'Wrangler Jeans',
     '100% Real Denim',
-    ['../img/jeans7.jpg'],
+    ['imgs/jeans7.jpg'],
     '$39.99',
     4.5,
     25,
@@ -269,7 +269,7 @@ const jeans = [
   [
     'Diesel Jeans',
     'Made in Ukraine',
-    ['../img/jeans8.jpg', '../img/jeans8a.jpg', '../img/jeans8b.jpg'],
+    ['imgs/jeans8.jpg', 'imgs/jeans8a.jpg', 'imgs/jeans8b.jpg'],
     '$49.99',
     5,
     26,
@@ -278,7 +278,7 @@ const jeans = [
   [
     'Calvin Klein Jeans',
     'Made in California',
-    ['../img/jeans9.jpg', '../img/jeans9a.jpg'],
+    ['imgs/jeans9.jpg', 'imgs/jeans9a.jpg'],
     '$24.99',
     4,
     27,
@@ -290,7 +290,7 @@ const shirts = [
   [
     'Calvin Klein T-Shirt',
     '100% Real Cotton',
-    ['../img/shirt1.jpg', '../img/shirt1a.jpg', '../img/shirt1b.jpg'],
+    ['imgs/shirt1.jpg', 'imgs/shirt1a.jpg', 'imgs/shirt1b.jpg'],
     '$49.99',
     4.5,
     28,
@@ -300,10 +300,10 @@ const shirts = [
     'Tommy Hilfiger T-Shirt',
     'Made in England',
     [
-      '../img/shirt2.jpg',
-      '../img/shirt2a.jpg',
-      '../img/shirt2b.jpg',
-      '../img/shirt2c.jpg'
+      'imgs/shirt2.jpg',
+      'imgs/shirt2a.jpg',
+      'imgs/shirt2b.jpg',
+      'imgs/shirt2c.jpg'
     ],
     '$29.99',
     2.5,
@@ -314,10 +314,10 @@ const shirts = [
     'Lacoste Polo T-Shirt ',
     'Made in China',
     [
-      '../img/shirt3.jpg',
-      '../img/shirt3a.jpg',
-      '../img/shirt3b.jpg',
-      '../img/shirt3c.jpg'
+      'imgs/shirt3.jpg',
+      'imgs/shirt3a.jpg',
+      'imgs/shirt3b.jpg',
+      'imgs/shirt3c.jpg'
     ],
     '$19.99',
     5,
@@ -327,7 +327,7 @@ const shirts = [
   [
     'Lacoste T-Shirt',
     'Made in New Zealand',
-    ['../img/shirt4.jpg', '../img/shirt4a.jpg'],
+    ['imgs/shirt4.jpg', 'imgs/shirt4a.jpg'],
     '$22.99',
     5,
     31,
@@ -336,7 +336,7 @@ const shirts = [
   [
     'Guess T-Shirt',
     'Made in Denmark',
-    ['../img/shirt5.jpg', '../img/shirt5a.jpg', '../img/shirt5b.jpg'],
+    ['imgs/shirt5.jpg', 'imgs/shirt5a.jpg', 'imgs/shirt5b.jpg'],
     '$33.99',
     4.5,
     32,
@@ -345,7 +345,7 @@ const shirts = [
   [
     'Ralph Lauren Polo T-Shirt',
     '100% Real Cotton',
-    ['../img/shirt6.jpg'],
+    ['imgs/shirt6.jpg'],
     '$39.99',
     3.5,
     33,
@@ -354,7 +354,7 @@ const shirts = [
   [
     'Ralph Lauren T-Shirt',
     'Made in India',
-    ['../img/shirt7.jpg', '../img/shirt7a.jpg', '../img/shirt7b.jpg'],
+    ['imgs/shirt7.jpg', 'imgs/shirt7a.jpg', 'imgs/shirt7b.jpg'],
     '$19.99',
     3.5,
     34,
@@ -363,7 +363,7 @@ const shirts = [
   [
     'Diesel T-Shirt',
     'Made in Ukraine',
-    ['../img/shirt8.jpg', '../img/shirt8a.jpg'],
+    ['imgs/shirt8.jpg', 'imgs/shirt8a.jpg'],
     '$24.99',
     3,
     35,
@@ -373,10 +373,10 @@ const shirts = [
     'Under Armour T-Shirt',
     'Made in Korea',
     [
-      '../img/shirt9.jpg',
-      '../img/shirt9a.jpg',
-      '../img/shirt9b.jpg',
-      '../img/shirt9c.jpg'
+      'imgs/shirt9.jpg',
+      'imgs/shirt9a.jpg',
+      'imgs/shirt9b.jpg',
+      'imgs/shirt9c.jpg'
     ],
     '$24.99',
     2.5,
@@ -389,7 +389,7 @@ const shoes = [
   [
     'Under Armour Shoes',
     'Made in Japan',
-    ['../img/shoe1.jpg', '../img/shoe1a.jpg', '../img/shoe1b.jpg'],
+    ['imgs/shoe1.jpg', 'imgs/shoe1a.jpg', 'imgs/shoe1b.jpg'],
     '$49.99',
     4,
     37,
@@ -399,10 +399,10 @@ const shoes = [
     'Under Armour Cleats',
     'Made in England',
     [
-      '../img/shoe2.jpg',
-      '../img/shoe2a.jpg',
-      '../img/shoe2b.jpg',
-      '../img/shoe2c.jpg'
+      'imgs/shoe2.jpg',
+      'imgs/shoe2a.jpg',
+      'imgs/shoe2b.jpg',
+      'imgs/shoe2c.jpg'
     ],
     '$69.99',
     3.5,
@@ -412,7 +412,7 @@ const shoes = [
   [
     'Nike Shoes ',
     'Made in China',
-    ['../img/shoe3.jpg', '../img/shoe3a.jpg'],
+    ['imgs/shoe3.jpg', 'imgs/shoe3a.jpg'],
     '$59.99',
     3.5,
     39,
@@ -421,7 +421,7 @@ const shoes = [
   [
     'Nike Cleats',
     'Made in New Zealand',
-    ['../img/shoe4.jpg', '../img/shoe4a.jpg', '../img/shoe4b.jpg'],
+    ['imgs/shoe4.jpg', 'imgs/shoe4a.jpg', 'imgs/shoe4b.jpg'],
     '$72.99',
     4,
     40,
@@ -430,7 +430,7 @@ const shoes = [
   [
     'Adidas Shoes',
     'Made in Denmark',
-    ['../img/shoe5.jpg', '../img/shoe5a.jpg'],
+    ['imgs/shoe5.jpg', 'imgs/shoe5a.jpg'],
     '$80.99',
     4.5,
     41,
@@ -439,7 +439,7 @@ const shoes = [
   [
     'Adidas Cleats',
     'Made in Canada',
-    ['../img/shoe6.jpg', '../img/shoe6a.jpg', '../img/shoe6b.jpg'],
+    ['imgs/shoe6.jpg', 'imgs/shoe6a.jpg', 'imgs/shoe6b.jpg'],
     '$99.99',
     5,
     42,
@@ -448,7 +448,7 @@ const shoes = [
   [
     'Reebok Shoes',
     'Made in India',
-    ['../img/shoe7.jpg'],
+    ['imgs/shoe7.jpg'],
     '$99.99',
     5,
     43,
@@ -457,7 +457,7 @@ const shoes = [
   [
     'Reebok Cleats',
     'Made in Ukraine',
-    ['../img/shoe8.jpg', '../img/shoe8a.jpg'],
+    ['imgs/shoe8.jpg', 'imgs/shoe8a.jpg'],
     '$64.99',
     3,
     44,
@@ -466,7 +466,7 @@ const shoes = [
   [
     'Umbro Cleats',
     'Made in Korea',
-    ['../img/shoe9.jpg', '../img/shoe9a.jpg', '../img/shoe9b.jpg'],
+    ['imgs/shoe9.jpg', 'imgs/shoe9a.jpg', 'imgs/shoe9b.jpg'],
     '$54.99',
     3.5,
     45,

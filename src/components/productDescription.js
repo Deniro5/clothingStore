@@ -7,11 +7,11 @@ var item1 = [
   'Twice Sweater',
   '100% Real Cotton',
   [
-    '../img/product1.jpg',
-    '../img/hoodie1.jpg',
-    '../img/product3.jpg',
-    '../img/product4.jpg',
-    '../img/product5.jpg'
+    'imgs/product1.jpg',
+    'imgs/hoodie1.jpg',
+    'imgs/product3.jpg',
+    'imgs/product4.jpg',
+    'imgs/product5.jpg'
   ],
   29.99,
   4,
@@ -148,10 +148,10 @@ class productDescription extends Component {
                 readonly
                 initialRating={this.state.currentItem[4]}
                 emptySymbol={
-                  <img src="../img/emptystar.png" className="icon" alt="" />
+                  <img src="imgs/emptystar.png" className="icon" alt="" />
                 }
                 fullSymbol={
-                  <img src="../img/star.png" className="icon" alt="*" />
+                  <img src="imgs/star.png" className="icon" alt="*" />
                 }
               />{' '}
               <span className="reviewLabel"> 101 Reviews </span>{' '}

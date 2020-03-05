@@ -128,10 +128,10 @@ class Footer extends Component {
         </Grid>
         <hr style={{ color: 'white', width: '80%', marginTop: '50px' }} />
         <p className="footerFinePrint">
-          <img alt="placeholder" src="../img/facebook.png" />
-          <img alt="placeholder" src="../img/instagram.png" />
-          <img alt="placeholder" src="../img/youtube.png" />
-          <img alt="placeholder" src="../img/twitter.png" />
+          <img alt="placeholder" src="imgs/facebook.png" />
+          <img alt="placeholder" src="imgs/instagram.png" />
+          <img alt="placeholder" src="imgs/youtube.png" />
+          <img alt="placeholder" src="imgs/twitter.png" />
         </p>
         <p className="footerFinePrint">
           {' '}

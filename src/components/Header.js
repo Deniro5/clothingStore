@@ -237,7 +237,7 @@ class Header extends Component {
           <img
             alt="placeholder"
             className="headerLogo"
-            src="../img/logo.png"
+            src="imgs/logo.png"
             onClick={this.home}
           />
           <div
@@ -434,7 +434,7 @@ class Header extends Component {
           <img
             alt="placeholder"
             className="subHeaderIcon"
-            src="../img/cart.png"
+            src="imgs/cart.png"
           />
         </div>
       </div>

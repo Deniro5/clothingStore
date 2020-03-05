@@ -52,9 +52,9 @@ class Shop extends Component {
             readonly
             initialRating={this.props.rating}
             emptySymbol={
-              <img src="../img/emptystar.png" className="icon" alt="" />
+              <img src="imgs/emptystar.png" className="icon" alt="" />
             }
-            fullSymbol={<img src="../img/star.png" className="icon" alt="*" />}
+            fullSymbol={<img src="imgs/star.png" className="icon" alt="*" />}
           />
           <p
             className="shopItemName"
@@ -88,7 +88,7 @@ class Shop extends Component {
               <img
                 alt="placeholder"
                 onClick={this.handleClose}
-                src="../img/close.png"
+                src="imgs/close.png"
                 className="shopItemModalClose"
               />
               <Product id={this.props.id} />

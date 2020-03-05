@@ -84,10 +84,10 @@ class productDescription extends Component {
                 readonly
                 initialRating={this.state.currentItem[4]}
                 emptySymbol={
-                  <img src="../img/emptystar.png" className="icon" alt="" />
+                  <img src="imgs/emptystar.png" className="icon" alt="" />
                 }
                 fullSymbol={
-                  <img src="../img/star.png" className="icon" alt="*" />
+                  <img src="imgs/star.png" className="icon" alt="*" />
                 }
               />{' '}
               <span className="reviewLabel"> 101 Reviews </span>{' '}

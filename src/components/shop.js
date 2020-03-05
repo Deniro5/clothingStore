@@ -153,7 +153,7 @@ class Shop extends Component {
 
     return (
       <Fragment>
-        <img className="shopBanner" src="../img/mensbanner.jpg" alt="banner" />
+        <img className="shopBanner" src="imgs/mensbanner.jpg" alt="banner" />
         <Sidemenu category={this.state.category} />
         <div className="Content">
           <div id="leftShopMenuContainer">

@@ -16,23 +16,23 @@ self.__precacheManifest = [
     "url": "/clothingStore/static/js/runtime~main.94cf2f85.js"
   },
   {
-    "revision": "2e3e0d2659c6316164d7",
-    "url": "/clothingStore/static/js/main.049e8dfb.chunk.js"
+    "revision": "343d355ea73138969c54",
+    "url": "/clothingStore/static/js/main.d3c6358e.chunk.js"
   },
   {
-    "revision": "d1bd8571de89f9cda83a",
-    "url": "/clothingStore/static/js/2.cec68966.chunk.js"
+    "revision": "7719ffcaea4e2a41af0b",
+    "url": "/clothingStore/static/js/2.769e393e.chunk.js"
   },
   {
-    "revision": "2e3e0d2659c6316164d7",
-    "url": "/clothingStore/static/css/main.233f6d6b.chunk.css"
+    "revision": "343d355ea73138969c54",
+    "url": "/clothingStore/static/css/main.317506a8.chunk.css"
   },
   {
-    "revision": "d1bd8571de89f9cda83a",
+    "revision": "7719ffcaea4e2a41af0b",
     "url": "/clothingStore/static/css/2.b8088515.chunk.css"
   },
   {
-    "revision": "52e598fd3f813a338e346322db2023ce",
+    "revision": "b791b3c9ce58e4c664815cd18d5c9cbc",
     "url": "/clothingStore/index.html"
   }
 ];

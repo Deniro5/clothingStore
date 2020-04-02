@@ -22,10 +22,6 @@ class Shop extends Component {
     });
   };
 
-  addToCart = () => {
-    alert('This item has been added to your cart');
-  };
-
   toProductPage = id => {
     this.props.history.push('/product/' + id);
   };
@@ -72,7 +68,7 @@ class Shop extends Component {
           </p>
           <p className= {"shopItemPrice " + (this.props.isCarousel ? 'hide' : '')}> {this.props.price} </p>
           <button
-            onClick={this.addToCart}
+             onClick={this.toProductPage.bind(this, this.props.id)}
             className= {"shopItemBtn " + (this.props.isCarousel ? 'hide' : '')}
           >
             {' '}

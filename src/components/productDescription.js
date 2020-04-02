@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { useContext, useState , useEffect , useRef } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Rating from 'react-rating';
 import products from './products';
+import {CartContext} from './CartContext'
 
 var item1 = [
   'Twice Sweater',
@@ -19,19 +20,30 @@ var item1 = [
   ['Black', 'Red', 'Pink', 'White', 'Grey']
 ];
 
-class productDescription extends Component {
-  constructor(props) {
-    super(props);
-    // Don't call this.setState() here!
-    this.state = { currSize: 'S', currStyle: 0, currentItem: item1 };
-  }
+const productDescription = props => {
 
-  componentWillMount = () => {
+  const [currSize, setCurrSize] = useState("S")
+  const [currStyle, setCurrStyle] = useState(0)
+  const [item, setItem] = useState(item1)
+  const square1 = useRef(null);
+  const square2 = useRef(null);
+  const square3 = useRef(null);
+  const square4 = useRef(null);
+  const square5 = useRef(null);
+  const square6 = useRef(null);
+  const stylesquare1 = useRef(null);
+  const stylesquare2 = useRef(null);
+  const stylesquare3 = useRef(null);
+  const stylesquare4 = useRef(null);
+  const stylesquare5 = useRef(null);
+  const [cart, setCart, id, setId] = useContext(CartContext)
+
+  useEffect (() => {
     window.scrollTo(0, 0);
-    if (this.props.match.params.id > 45 || this.props.match.params.id < 1) {
+    if (props.match.params.id > 45 || props.match.params.id < 1) {
     } else {
-      var index = Math.floor((this.props.match.params.id - 1) / 9);
-      var index1 = (this.props.match.params.id - 1) % 9;
+      var index = Math.floor((props.match.params.id - 1) / 9);
+      var index1 = (props.match.params.id - 1) % 9;
       let item = [];
       if (index === 0) {
         item = products['Accessories'][index1];
@@ -44,84 +56,74 @@ class productDescription extends Component {
       } else if (index === 4) {
         item = products['Shoes'][index1];
       }
-      this.setState({
-        currentItem: item
-      });
+      setItem(item)
     }
-  };
+  }, [props.match.params.id])
 
-  componentWillReceiveProps = () => {
-    window.location.reload();
-  };
-
-  notify = () => {
+  const notify = () => {
+    let newCart = [...cart]
+    newCart.push({id: id, name: item[0] , price: item[3] , description: item[1] , style: item[6][currStyle], size: currSize, imgsrc: item[2][currStyle] })
+    setCart(newCart)
+    setId(id + 1)
     alert(
-      'Item was added to cart. Size is ' +
-        this.state.currSize +
-        '. Style is ' +
-        this.state.currentItem[6][this.state.currStyle]
+      'Item successfully added to cart'
     );
   };
 
-  sizeSelect = (e, size) => {
-    this.refs.square1.className = this.refs.square1.className.replace(
+  const sizeSelect = (e, size) => {
+    square1.current.className = square1.current.className.replace(
       ' activeSquare',
       ''
     );
-    this.refs.square2.className = this.refs.square2.className.replace(
+    square2.current.className = square2.current.className.replace(
       ' activeSquare',
       ''
     );
-    this.refs.square3.className = this.refs.square3.className.replace(
+    square3.current.className = square3.current.className.replace(
       ' activeSquare',
       ''
     );
-    this.refs.square4.className = this.refs.square4.className.replace(
+    square4.current.className = square4.current.className.replace(
       ' activeSquare',
       ''
     );
-    this.refs.square5.className = this.refs.square5.className.replace(
+    square5.current.className = square5.current.className.replace(
       ' activeSquare',
       ''
     );
-    this.refs.square6.className = this.refs.square6.className.replace(
+    square6.current.className = square6.current.className.replace(
       ' activeSquare',
       ''
     );
     e.target.className += ' activeSquare';
-    this.setState({
-      currSize: size
-    });
+    setCurrSize(size)
   };
 
-  styleSelect = (e, size) => {
-    this.refs.stylesquare1.className = this.refs.stylesquare1.className.replace(
+  const styleSelect = (e, style) => {
+    stylesquare1.current.className = stylesquare1.current.className.replace(
       ' activeStyleSquare',
       ''
     );
-    this.refs.stylesquare2.className = this.refs.stylesquare2.className.replace(
+    stylesquare2.current.className = stylesquare2.current.className.replace(
       ' activeStyleSquare',
       ''
     );
-    this.refs.stylesquare3.className = this.refs.stylesquare3.className.replace(
+    stylesquare3.current.className = stylesquare3.current.className.replace(
       ' activeStyleSquare',
       ''
     );
-    this.refs.stylesquare4.className = this.refs.stylesquare4.className.replace(
+    stylesquare4.current.className = stylesquare4.current.className.replace(
       ' activeStyleSquare',
       ''
     );
-    this.refs.stylesquare5.className = this.refs.stylesquare5.className.replace(
+    stylesquare5.current.className = stylesquare5.current.className.replace(
       ' activeStyleSquare',
       ''
     );
     e.target.className += ' activeStyleSquare';
-    this.setState({
-      currStyle: size
-    });
+    setCurrStyle(style)
   };
 
-  render() {
     //Check if the user gave a non existant link or not
     return (
       <div className="productHome">
@@ -130,11 +132,11 @@ class productDescription extends Component {
             <img
               alt="item"
               className="productImg"
-              src={this.state.currentItem[2][this.state.currStyle]}
+              src={item[2][currStyle]}
             ></img>
           </Grid>
           <Grid item xs={12} sm={12} md={6}>
-            <h2 className="productTitle"> {this.state.currentItem[0]} </h2>
+            <h2 className="productTitle"> {item[0]} </h2>
             <p className="productDescription">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id
               magna cursus, iaculis massa at, aliquam lorem. Nullam non nisi ut
@@ -142,11 +144,11 @@ class productDescription extends Component {
               Duis ut ex eu eros venenatis egestas. Aliquam mattis tempus risus,
               vitae rutrum lectus vulputate eget. Sed cursus dolor.{' '}
             </p>
-            <h2 className="productPrice"> {this.state.currentItem[3]} </h2>
+            <h2 className="productPrice"> {item[3]} </h2>
             <h2 className="productRating">
               <Rating
                 readonly
-                initialRating={this.state.currentItem[4]}
+                initialRating={item[4]}
                 emptySymbol={
                   <img src="imgs/emptystar.png" className="icon" alt="" />
                 }
@@ -157,105 +159,105 @@ class productDescription extends Component {
               <span className="reviewLabel"> 101 Reviews </span>{' '}
             </h2>
 
-            <h3> Style: {this.state.currentItem[6][this.state.currStyle]} </h3>
+            <h3> Style: {item[6][currStyle]} </h3>
             <img
-              ref="stylesquare1"
+              ref={stylesquare1}
               alt="style1"
-              src={this.state.currentItem[2][0]}
+              src={item[2][0]}
               className="styleSquare activeStyleSquare"
-              onClick={e => this.styleSelect(e, 0)}
+              onClick={e => styleSelect(e, 0)}
             />
             <img
-              ref="stylesquare2"
+              ref={stylesquare2}
               alt="style2"
-              src={this.state.currentItem[2][1]}
+              src={item[2][1]}
               className={
                 'styleSquare ' +
-                (this.state.currentItem[2].length >= 2 ? '' : 'hide')
+                (item[2].length >= 2 ? '' : 'hide')
               }
-              onClick={e => this.styleSelect(e, 1)}
+              onClick={e => styleSelect(e, 1)}
             />
             <img
-              ref="stylesquare3"
+              ref={stylesquare3}
               alt="style3"
-              src={this.state.currentItem[2][2]}
+              src={item[2][2]}
               className={
                 'styleSquare ' +
-                (this.state.currentItem[2].length >= 3 ? '' : 'hide')
+                (item[2].length >= 3 ? '' : 'hide')
               }
-              onClick={e => this.styleSelect(e, 2)}
+              onClick={e => styleSelect(e, 2)}
             />
             <img
-              ref="stylesquare4"
+              ref={stylesquare4}
               alt="style4"
-              src={this.state.currentItem[2][3]}
+              src={item[2][3]}
               className={
                 'styleSquare ' +
-                (this.state.currentItem[2].length >= 4 ? '' : 'hide')
+                (item[2].length >= 4 ? '' : 'hide')
               }
-              onClick={e => this.styleSelect(e, 3)}
+              onClick={e => styleSelect(e, 3)}
             />
             <img
-              ref="stylesquare5"
+              ref={stylesquare5}
               alt="style5"
-              src={this.state.currentItem[2][4]}
+              src={item[2][4]}
               className={
                 'styleSquare ' +
-                (this.state.currentItem[2].length >= 5 ? '' : 'hide')
+                (item[2].length >= 5 ? '' : 'hide')
               }
-              onClick={e => this.styleSelect(e, 4)}
+              onClick={e => styleSelect(e, 4)}
             />
 
             <h3> Size: </h3>
             <div
-              ref="square1"
+              ref={square1}
               className="sizeSquare activeSquare"
-              onClick={e => this.sizeSelect(e, 'S')}
+              onClick={e => sizeSelect(e, 'S')}
             >
               {' '}
               S{' '}
             </div>
             <div
-              ref="square2"
+               ref={square2}
               className="sizeSquare"
-              onClick={e => this.sizeSelect(e, 'M')}
+              onClick={e => sizeSelect(e, 'M')}
             >
               {' '}
               M{' '}
             </div>
             <div
-              ref="square3"
+              ref={square3}
               className="sizeSquare"
-              onClick={e => this.sizeSelect(e, 'L')}
+              onClick={e => sizeSelect(e, 'L')}
             >
               {' '}
               L{' '}
             </div>
             <div
-              ref="square4"
+              ref={square4}
               className="sizeSquare"
-              onClick={e => this.sizeSelect(e, 'XL')}
+              onClick={e => sizeSelect(e, 'XL')}
             >
               {' '}
               XL{' '}
             </div>
             <div
-              ref="square5"
+              ref={square5}
               className="sizeSquare"
-              onClick={e => this.sizeSelect(e, '2XL')}
+              onClick={e => sizeSelect(e, '2XL')}
             >
               {' '}
               2XL{' '}
             </div>
             <div
-              ref="square6"
+              ref={square6}
               className="sizeSquare"
-              onClick={e => this.sizeSelect(e, '3XL')}
+              onClick={e => sizeSelect(e, '3XL')}
             >
               {' '}
               3XL{' '}
             </div>
-            <button className="productBtn" onClick={this.notify}>
+            <button className="productBtn" onClick={notify}>
               {' '}
               Add to Cart{' '}
             </button>
@@ -263,7 +265,6 @@ class productDescription extends Component {
         </Grid>
       </div>
     );
-  }
 }
 
 export default productDescription;

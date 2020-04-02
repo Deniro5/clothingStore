@@ -1,5 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
+const styles= {
+  link : {
+    color: "black",
+    textDecoration:"none",
+  }
+}
 
 class Sidemenu extends Component {
   navigate = path => {
@@ -10,8 +18,8 @@ class Sidemenu extends Component {
     const menu = (
       <Fragment>
       <h2> SHOP BY PRODUCT </h2>
+      <Link style = {styles.link} to = "/shop/accessories">
       <p
-        onClick={this.navigate.bind(this, 'accessories')}
         className={
           'SideMenuContainerItem ' +
           (this.props.category === 'Accessories' ? 'selected' : '')
@@ -20,8 +28,9 @@ class Sidemenu extends Component {
         {' '}
         Accessories{' '}
       </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/hoodies">
       <p
-        onClick={this.navigate.bind(this, 'hoodies')}
         className={
           'SideMenuContainerItem ' +
           (this.props.category === 'Hoodies' ? 'selected' : '')
@@ -30,8 +39,9 @@ class Sidemenu extends Component {
         {' '}
         Hoodies{' '}
       </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/jeans">
       <p
-        onClick={this.navigate.bind(this, 'jeans')}
         className={
           'SideMenuContainerItem ' +
           (this.props.category === 'Jeans' ? 'selected' : '')
@@ -40,8 +50,9 @@ class Sidemenu extends Component {
         {' '}
         Jeans{' '}
       </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/shirts">
       <p
-        onClick={this.navigate.bind(this, 'shirts')}
         className={
           'SideMenuContainerItem ' +
           (this.props.category === 'Shirts' ? 'selected' : '')
@@ -50,8 +61,9 @@ class Sidemenu extends Component {
         {' '}
         Shirts{' '}
       </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/shoes">
       <p
-        onClick={this.navigate.bind(this, 'shoes')}
         className={
           'SideMenuContainerItem ' +
           (this.props.category === 'Shoes' ? 'selected' : '')
@@ -60,6 +72,7 @@ class Sidemenu extends Component {
         {' '}
         Shoes{' '}
       </p>
+      </Link>
     </Fragment>
     )
     return (

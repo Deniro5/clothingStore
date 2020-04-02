@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -8,13 +8,24 @@ import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter } from 'react-router-dom';
 import products from './products';
+import Cart from './Cart';
+import Modal from '@material-ui/core/modal';
+import {Link} from 'react-router-dom';
+
+const styles= {
+  link : {
+    color: "black",
+    textDecoration:"none",
+  }
+}
 
 class Header extends Component {
   state = {
     top: false,
     selected: '',
     searchinput: '',
-    searchresult: []
+    searchresult: [],
+    showCart: false,
   };
 
   showmenu = () => {
@@ -94,6 +105,18 @@ class Header extends Component {
       searchresult: newsearchresult
     });
   };
+
+  handleOpenCart = () => {
+    this.setState({
+      showCart: true,
+    })
+  }
+
+  handleCloseCart = () => {
+    this.setState({
+      showCart: false,
+    })
+  }
 
   render() {
     let searchResults = [];
@@ -231,6 +254,51 @@ class Header extends Component {
       </div>
     );
 
+    const menu = (
+    <Fragment>
+      <Link style = {styles.link} to = "/shop/accessories">
+      <p
+        className="headerMenuSegment"
+      >
+        {' '}
+        Accessories{' '}
+      </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/hoodies">
+      <p
+        className="headerMenuSegment"
+      >
+        {' '}
+        Hoodies{' '}
+      </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/jeans">
+      <p
+        className="headerMenuSegment"
+      >
+        {' '}
+        Jeans{' '}
+      </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/shirts">
+      <p
+        className="headerMenuSegment"
+      >
+        {' '}
+        shirts{' '}
+      </p>
+      </Link>
+      <Link style = {styles.link} to = "/shop/shoes">
+      <p
+        className="headerMenuSegment"
+      >
+        {' '}
+        Shoes{' '}
+      </p>
+      </Link>
+    </Fragment>
+    )
+
     return (
       <div className="headerContainer">
         <div className="subHeader leftSubHeader">
@@ -259,41 +327,7 @@ class Header extends Component {
                 'headerMenu ' + (this.state.selected === 1 ? '' : 'hide')
               }
             >
-              <p
-                onClick={this.navigate.bind(this, 'accessories')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Accessories{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'hoodies')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Hoodies{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'jeans')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Jeans{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shirts')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shirts{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shoes')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shoes{' '}
-              </p>
+              {menu}
             </div>
           </div>
           <div
@@ -316,41 +350,7 @@ class Header extends Component {
                 'headerMenu ' + (this.state.selected === 2 ? '' : 'hide')
               }
             >
-              <p
-                onClick={this.navigate.bind(this, 'accessories')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Accessories{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'hoodies')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Hoodies{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'jeans')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Jeans{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shirts')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shirts{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shoes')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shoes{' '}
-              </p>
+             {menu}
             </div>
           </div>
           <div
@@ -372,41 +372,7 @@ class Header extends Component {
                 'headerMenu ' + (this.state.selected === 3 ? '' : 'hide')
               }
             >
-              <p
-                onClick={this.navigate.bind(this, 'accessories')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Accessories{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'hoodies')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Hoodies{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'jeans')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Jeans{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shirts')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shirts{' '}
-              </p>
-              <p
-                onClick={this.navigate.bind(this, 'shoes')}
-                className="headerMenuSegment"
-              >
-                {' '}
-                Shoes{' '}
-              </p>
+              {menu}
             </div>
           </div>
         </div>
@@ -435,7 +401,25 @@ class Header extends Component {
             alt="placeholder"
             className="subHeaderIcon"
             src="imgs/cart.png"
+            onClick = {this.handleOpenCart}
           />
+          <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.state.showCart}
+            onClose={this.handleCloseCart}
+          >
+            <div className="cartModal">
+              <img
+                alt="placeholder"
+                onClick={this.handleCloseCart}
+                src="imgs/close.png"
+                className="shopItemModalClose"
+              />
+    
+                <Cart handleClose = {this.handleCloseCart.bind(this)}/>
+            </div>
+          </Modal>
         </div>
       </div>
     );

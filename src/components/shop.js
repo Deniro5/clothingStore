@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Shopitem from './shopItem';
 import Sidemenu from './Sidemenu';
@@ -6,28 +6,37 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import products from './products';
 import { withRouter } from 'react-router-dom';
 
-class Shop extends Component {
-  state = {
-    sortShow: false,
-    typeOfSort: 'New Arrivals',
-    category: 'accessories',
-    categoryShow: false,
-    currentItems: products['Accessories']
-  };
+const Shop = props => {
 
-  componentWillMount = () => {
+  const [sortShow, setSortShow] = useState(false);
+  const [typeOfSort, setTypeOfSort] = useState('New Arrivals');
+  const [category, setCategory] = useState("accessories");
+  const [categoryShow, setCategoryShow] = useState(false);
+  const [currentItems, setCurrentItems] = useState(products['Accessories']);
+  const [loaded, setLoaded] = useState()
+
+  useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
-    this.updateCategory();
-  };
+  }, [])
 
-  componentWillReceiveProps = () => {
-    this.updateCategory();
-    window.location.reload();
-  };
+  useEffect(() => {
+    updateCategory();
+  } , [props.match.params.section]);
 
-  updateCategory = () => {
-    var category = this.props.match.params.section.toLowerCase();
+  useEffect(() => {
+      if (loaded) {  // We dont want this to run on the first time since array is sorted by default
+        let oldArray = [...currentItems]
+        let sortedArray  = sortArray(oldArray);
+        setCurrentItems(sortedArray)
+      }
+      else {
+        setLoaded(true);
+      }
+  }, [typeOfSort])
+
+ const updateCategory = () => {
+    var category = props.match.params.section.toLowerCase();
     if (
       category === 'accessories' ||
       category === 'hoodies' ||
@@ -39,53 +48,29 @@ class Shop extends Component {
       first = first.toUpperCase();
       category = first + category.substring(1);
       var currentItems = products[category];
-      currentItems = this.sortArray(currentItems);
-      this.setState({
-        category: category,
-        currentItems: currentItems
-      });
+      setCategory(category)
+      setCurrentItems(currentItems)
     }
   };
 
-  toggleSort = show => {
-    this.setState({
-      sortShow: show
-    });
+  const toggleSort = show => {
+    setSortShow(show)
   };
 
-  toggleCategory = show => {
-    this.setState({
-      categoryShow: show
-    });
+  const toggleCategory = show => {
+    setCategoryShow(show)
   };
 
-  addToCart = () => {
-    alert('This item has been added to your cart');
+  const changeSort = newsort => {
+    setTypeOfSort(newsort)
   };
 
-  changeSort = newsort => {
-    this.setState(
-      {
-        typeOfSort: newsort
-      },
-      () => {
-        var newItemArray = this.sortArray(this.state.currentItems);
-        this.setState({
-          currentItems: newItemArray,
-          sortShow: false
-        });
-      }
-    );
+  const changeCategory = newcategory => {
+    props.history.push('/shop/' + newcategory);
+    setCategoryShow(false)
   };
 
-  changeCategory = newcategory => {
-    this.props.history.push('/shop/' + newcategory);
-    this.setState({
-      categoryShow: false
-    });
-  };
-
-  sortArray = arr => {
+  const sortArray = arr => {
     function rateCompare(a, b) {
       if (a[4] < b[4]) {
         return 1;
@@ -125,67 +110,64 @@ class Shop extends Component {
         return -1;
       }
     }
-    if (this.state.typeOfSort === 'New Arrivals') {
+    if (typeOfSort === 'New Arrivals') {
       arr.sort(ageCompare);
     }
-    if (this.state.typeOfSort === 'Alphabetical (A-Z)') {
+    if (typeOfSort === 'Alphabetical (A-Z)') {
       arr.sort(alphaCompare);
     }
-    if (this.state.typeOfSort === 'Price: Low to High') {
+    if (typeOfSort === 'Price: Low to High') {
       arr.sort(priceCompare);
     }
-    if (this.state.typeOfSort === 'Price: High to Low') {
+    if (typeOfSort === 'Price: High to Low') {
       arr.sort(reversePriceCompare);
     }
-    if (this.state.typeOfSort === 'Rating') {
+    if (typeOfSort === 'Rating') {
       arr.sort(rateCompare);
     }
     return arr;
   };
 
-  navigate = path => {};
-
-  render() {
     var dropDownClasses = 'dropDownIcon ';
-    if (this.state.sortShow) {
+    if (sortShow) {
       dropDownClasses += 'rotate';
     }
 
     return (
       <Fragment>
         <img className="shopBanner" src="imgs/mensbanner.jpg" alt="banner" />
-        <Sidemenu category={this.state.category} />
+        <Sidemenu category={category} />
         <div className="Content">
           <div id="leftShopMenuContainer">
             <p className="shopMenuLabel"> Sort By: </p>
             <div
               className="sortmenu menu-root"
-              onClick={this.toggleSort.bind(this, true)}
-              onMouseLeave={this.toggleSort.bind(this, false)}
+              onClick={toggleSort.bind(this, true)}
+              onMouseLeave={toggleSort.bind(this, false)}
             >
-              <p className="maintext"> {this.state.typeOfSort}</p>
+              <p className="maintext"> {typeOfSort}</p>
               <ExpandMoreIcon className={dropDownClasses} />
-              <div hidden={!this.state.sortShow}>
+              <div hidden={!sortShow}>
                 <div className="shopmenu-items">
-                  <div onClick={this.changeSort.bind(this, 'New Arrivals')}>
+                  <div onClick={changeSort.bind(this, 'New Arrivals')}>
                     {'New Arrivals'}
                   </div>
                   <div
-                    onClick={this.changeSort.bind(this, 'Price: Low to High')}
+                    onClick={changeSort.bind(this, 'Price: Low to High')}
                   >
                     {'Price: Low to High'}
                   </div>
                   <div
-                    onClick={this.changeSort.bind(this, 'Price: High to Low')}
+                    onClick={changeSort.bind(this, 'Price: High to Low')}
                   >
                     {'Price: High to low'}
                   </div>
                   <div
-                    onClick={this.changeSort.bind(this, 'Alphabetical (A-Z)')}
+                    onClick={changeSort.bind(this, 'Alphabetical (A-Z)')}
                   >
                     {'Alphabetical (A-Z)'}
                   </div>
-                  <div onClick={this.changeSort.bind(this, 'Rating')}>
+                  <div onClick={changeSort.bind(this, 'Rating')}>
                     {'Rating'}
                   </div>
                 </div>
@@ -196,26 +178,26 @@ class Shop extends Component {
             <p className="shopMenuLabel"> Category: </p>
             <div
               className="sortmenu menu-root"
-              onClick={this.toggleCategory.bind(this, true)}
-              onMouseLeave={this.toggleCategory.bind(this, false)}
+              onClick={toggleCategory.bind(this, true)}
+              onMouseLeave={toggleCategory.bind(this, false)}
             >
-              <p className="maintext"> {this.state.category}</p>
+              <p className="maintext"> {category}</p>
               <ExpandMoreIcon className={dropDownClasses} />
-              <div hidden={!this.state.categoryShow}>
+              <div hidden={!categoryShow}>
                 <div className="shopmenu-items">
-                  <div onClick={this.changeCategory.bind(this, 'Accessories')}>
+                  <div onClick={changeCategory.bind(this, 'Accessories')}>
                     {'Accessories'}
                   </div>
-                  <div onClick={this.changeCategory.bind(this, 'Hoodies')}>
+                  <div onClick={changeCategory.bind(this, 'Hoodies')}>
                     {'Hoodies'}
                   </div>
-                  <div onClick={this.changeCategory.bind(this, 'Jeans')}>
+                  <div onClick={changeCategory.bind(this, 'Jeans')}>
                     {'Jeans'}
                   </div>
-                  <div onClick={this.changeCategory.bind(this, 'Shirts')}>
+                  <div onClick={changeCategory.bind(this, 'Shirts')}>
                     {'Shirts'}
                   </div>
-                  <div onClick={this.changeCategory.bind(this, 'Shoes')}>
+                  <div onClick={changeCategory.bind(this, 'Shoes')}>
                     {'Shoes'}
                   </div>
                 </div>
@@ -223,101 +205,21 @@ class Shop extends Component {
             </div>
           </div>
           <Grid container spacing={0} alignContent={'center'}>
+            {currentItems.map((item)=>(
             <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[0][0]}
-                desc={this.state.currentItems[0][1]}
-                img={this.state.currentItems[0][2][0]}
-                price={this.state.currentItems[0][3]}
-                rating={this.state.currentItems[0][4]}
-                id={this.state.currentItems[0][5]}
-              />
+                <Shopitem
+                name={item[0]}
+                desc={item[1]}
+                img={item[2][0]}
+                price={item[3]}
+                rating={item[4]}
+                id={item[5]} />  
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[1][0]}
-                desc={this.state.currentItems[1][1]}
-                img={this.state.currentItems[1][2][0]}
-                price={this.state.currentItems[1][3]}
-                rating={this.state.currentItems[1][4]}
-                id={this.state.currentItems[1][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[2][0]}
-                desc={this.state.currentItems[2][1]}
-                img={this.state.currentItems[2][2][0]}
-                price={this.state.currentItems[2][3]}
-                rating={this.state.currentItems[2][4]}
-                id={this.state.currentItems[2][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[3][0]}
-                desc={this.state.currentItems[3][1]}
-                img={this.state.currentItems[3][2][0]}
-                price={this.state.currentItems[3][3]}
-                rating={this.state.currentItems[3][4]}
-                id={this.state.currentItems[3][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[4][0]}
-                desc={this.state.currentItems[4][1]}
-                img={this.state.currentItems[4][2][0]}
-                price={this.state.currentItems[4][3]}
-                rating={this.state.currentItems[4][4]}
-                id={this.state.currentItems[4][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[5][0]}
-                desc={this.state.currentItems[5][1]}
-                img={this.state.currentItems[5][2][0]}
-                price={this.state.currentItems[5][3]}
-                rating={this.state.currentItems[5][4]}
-                id={this.state.currentItems[5][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[6][0]}
-                desc={this.state.currentItems[6][1]}
-                img={this.state.currentItems[6][2][0]}
-                price={this.state.currentItems[6][3]}
-                rating={this.state.currentItems[6][4]}
-                id={this.state.currentItems[6][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[7][0]}
-                desc={this.state.currentItems[7][1]}
-                img={this.state.currentItems[7][2][0]}
-                price={this.state.currentItems[7][3]}
-                rating={this.state.currentItems[7][4]}
-                id={this.state.currentItems[7][5]}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <Shopitem
-                name={this.state.currentItems[8][0]}
-                desc={this.state.currentItems[8][1]}
-                img={this.state.currentItems[8][2][0]}
-                price={this.state.currentItems[8][3]}
-                rating={this.state.currentItems[8][4]}
-                id={this.state.currentItems[8][5]}
-              />
-            </Grid>
+            ))}
           </Grid>
         </div>
       </Fragment>
     );
   }
-}
 
 export default withRouter(Shop);

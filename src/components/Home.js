@@ -49,7 +49,6 @@ const Home = props => {
       itemClass="carousel-item-padding-40-px"
     >
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Hoodies[0][0]}
@@ -58,10 +57,9 @@ const Home = props => {
           price={products.Hoodies[0][3]}
           rating={products.Hoodies[0][4]}
           id={products.Hoodies[0][5]}
-        />{' '}
+        />
       </div>
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Shirts[0][0]}
@@ -70,10 +68,9 @@ const Home = props => {
           price={products.Shirts[0][3]}
           rating={products.Shirts[0][4]}
           id={products.Shirts[0][5]}
-        />{' '}
+        />
       </div>
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Jeans[0][0]}
@@ -82,10 +79,9 @@ const Home = props => {
           price={products.Jeans[0][3]}
           rating={products.Jeans[0][4]}
           id={products.Jeans[0][5]}
-        />{' '}
+        />
       </div>
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Hoodies[1][0]}
@@ -94,10 +90,9 @@ const Home = props => {
           price={products.Hoodies[1][3]}
           rating={products.Hoodies[1][4]}
           id={products.Hoodies[1][5]}
-        />{' '}
+        />
       </div>
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Jeans[1][0]}
@@ -106,10 +101,9 @@ const Home = props => {
           price={products.Jeans[1][3]}
           rating={products.Jeans[1][4]}
           id={products.Jeans[1][5]}
-        />{' '}
+        />
       </div>
       <div className="carouselDiv">
-        {' '}
         <Shopitem
           isCarousel
           name={products.Accessories[0][0]}
@@ -118,7 +112,7 @@ const Home = props => {
           price={products.Accessories[0][3]}
           rating={products.Accessories[0][4]}
           id={products.Accessories[0][5]}
-        />{' '}
+        />
       </div>
     </Carousel>
   );
@@ -138,7 +132,6 @@ const Home = props => {
               Duis ut ex eu eros venenatis egestas. Aliquam mattis tempus risus,
               vitae rutrum lectus vulputate eget. Sed cursus dolor.
             </p>
-
             <button onClick={toShop}>Shop New Arrivals</button>
           </Grid>
         </Grid>
@@ -165,14 +158,12 @@ const Home = props => {
           <Grid item xs={12} sm={12} md={6}>
             <h2> Featured </h2>
             <p>
-              {' '}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id
               magna cursus, iaculis massa at, aliquam lorem. Nullam non nisi ut
               ex sagittis eleifend. Duis id tempor tortor, nec sagittis metus.
               Duis ut ex eu eros venenatis egestas. Aliquam mattis tempus risus,
               vitae rutrum lectus vulputate eget. Sed cursus dolor.
             </p>
-
             <button onClick={toShop}>Shop Featured</button>
           </Grid>
         </Grid>

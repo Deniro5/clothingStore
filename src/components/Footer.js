@@ -17,36 +17,31 @@ class Footer extends Component {
               onClick={this.navigate.bind(this, 'accessories')}
               className="footerItem"
             >
-              {' '}
-              Accessories{' '}
+              Accessories
             </p>
             <p
               onClick={this.navigate.bind(this, 'hoodies')}
               className="footerItem"
             >
-              {' '}
-              Hoodies{' '}
+              Hoodies
             </p>
             <p
               onClick={this.navigate.bind(this, 'jeans')}
               className="footerItem"
             >
-              {' '}
-              Jeans{' '}
+              Jeans
             </p>
             <p
               onClick={this.navigate.bind(this, 'shirts')}
               className="footerItem"
             >
-              {' '}
-              Shirts{' '}
+              Shirts
             </p>
             <p
               onClick={this.navigate.bind(this, 'shoes')}
               className="footerItem"
             >
-              {' '}
-              Shoes{' '}
+              Shoes
             </p>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -55,36 +50,31 @@ class Footer extends Component {
               onClick={this.navigate.bind(this, 'accessories')}
               className="footerItem"
             >
-              {' '}
-              Accessories{' '}
+              Accessories
             </p>
             <p
               onClick={this.navigate.bind(this, 'hoodies')}
               className="footerItem"
             >
-              {' '}
-              Hoodies{' '}
+              Hoodies
             </p>
             <p
               onClick={this.navigate.bind(this, 'jeans')}
               className="footerItem"
             >
-              {' '}
-              Jeans{' '}
+              Jeans
             </p>
             <p
               onClick={this.navigate.bind(this, 'shirts')}
               className="footerItem"
             >
-              {' '}
-              Shirts{' '}
+              Shirts
             </p>
             <p
               onClick={this.navigate.bind(this, 'shoes')}
               className="footerItem"
             >
-              {' '}
-              Shoes{' '}
+              Shoes
             </p>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -93,36 +83,31 @@ class Footer extends Component {
               onClick={this.navigate.bind(this, 'accessories')}
               className="footerItem"
             >
-              {' '}
-              Accessories{' '}
+              Accessories
             </p>
             <p
               onClick={this.navigate.bind(this, 'hoodies')}
               className="footerItem"
             >
-              {' '}
-              Hoodies{' '}
+              Hoodies
             </p>
             <p
               onClick={this.navigate.bind(this, 'jeans')}
               className="footerItem"
             >
-              {' '}
-              Jeans{' '}
+              Jeans
             </p>
             <p
               onClick={this.navigate.bind(this, 'shirts')}
               className="footerItem"
             >
-              {' '}
-              Shirts{' '}
+              Shirts
             </p>
             <p
               onClick={this.navigate.bind(this, 'shoes')}
               className="footerItem"
             >
-              {' '}
-              Shoes{' '}
+              Shoes
             </p>
           </Grid>
         </Grid>
@@ -134,12 +119,11 @@ class Footer extends Component {
           <img alt="placeholder" src="imgs/twitter.png" />
         </p>
         <p className="footerFinePrint">
-          {' '}
           Tonryo's business concept is to offer fashion and quality at the best
           price in a sustainable way. Tonyro has since it was founded in 1947
           grown into one of the world's leading fashion companies. The content
           of this site is copyright-protected and is the property of Tonyro
-          Deniro & Tony AB.{' '}
+          Deniro & Tony AB.
         </p>
       </div>
     );

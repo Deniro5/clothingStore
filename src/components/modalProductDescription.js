@@ -6,13 +6,12 @@ import products from './products';
 class productDescription extends Component {
   constructor(props) {
     super(props);
-    // Don't call this.setState() here!
     this.state = { currStyle: 0, currentItem: [] };
   }
 
   componentWillMount = () => {
-    var index = Math.floor((this.props.id - 1) / 9);
-    var index1 = (this.props.id - 1) % 9;
+    var index = Math.floor((this.props.id - 1) / 9); //The type of product
+    var index1 = (this.props.id - 1) % 9; // The actual product
     let item = [];
     if (index === 0) {
       item = products['Accessories'][index1];
@@ -30,35 +29,31 @@ class productDescription extends Component {
     });
   };
 
-  styleSelect = (e, size) => {
-    this.refs.stylesquare1.className = this.refs.stylesquare1.className.replace(
-      ' activeStyleSquare',
-      ''
-    );
-    this.refs.stylesquare2.className = this.refs.stylesquare2.className.replace(
-      ' activeStyleSquare',
-      ''
-    );
-    this.refs.stylesquare3.className = this.refs.stylesquare3.className.replace(
-      ' activeStyleSquare',
-      ''
-    );
-    this.refs.stylesquare4.className = this.refs.stylesquare4.className.replace(
-      ' activeStyleSquare',
-      ''
-    );
-    this.refs.stylesquare5.className = this.refs.stylesquare5.className.replace(
-      ' activeStyleSquare',
-      ''
-    );
+  styleSelect = (e, style) => {
+    alert(style);
     e.target.className += ' activeStyleSquare';
     this.setState({
-      currStyle: size
+      currStyle: style
     });
   };
 
   render() {
-    //Check if the user gave a non existant link or not
+    let styleSquares = [];
+    for (let count = 0; count < 5; count++) {
+      styleSquares.push(
+        <img
+          alt="style"
+          src={this.state.currentItem[2][count]}
+          className={
+            'styleSquare ' +
+            (this.state.currentItem[2].length > count ? '' : 'hide') +
+            (this.state.currStyle === count ? ' activeStyleSquare' : '')
+          }
+          onClick={e => this.styleSelect(e, count)}
+        />
+      );
+    }
+
     return (
       <div className="productHome">
         <Grid container spacing={0}>
@@ -76,7 +71,7 @@ class productDescription extends Component {
               magna cursus, iaculis massa at, aliquam lorem. Nullam non nisi ut
               ex sagittis eleifend. Duis id tempor tortor, nec sagittis metus.
               Duis ut ex eu eros venenatis egestas. Aliquam mattis tempus risus,
-              vitae rutrum lectus vulputate eget. Sed cursus dolor.{' '}
+              vitae rutrum lectus vulputate eget. Sed cursus dolor.
             </p>
             <h2 className="productPrice"> {this.state.currentItem[3]} </h2>
             <h2 className="productRating">
@@ -89,58 +84,11 @@ class productDescription extends Component {
                 fullSymbol={
                   <img src="imgs/star.png" className="icon" alt="*" />
                 }
-              />{' '}
-              <span className="reviewLabel"> 101 Reviews </span>{' '}
+              />
+              <span className="reviewLabel"> 101 Reviews </span>
             </h2>
-
             <h3> Style: {this.state.currentItem[6][this.state.currStyle]} </h3>
-            <img
-              ref="stylesquare1"
-              alt="style1"
-              src={this.state.currentItem[2][0]}
-              className="styleSquare activeStyleSquare"
-              onClick={e => this.styleSelect(e, 0)}
-            />
-            <img
-              ref="stylesquare2"
-              alt="style2"
-              src={this.state.currentItem[2][1]}
-              className={
-                'styleSquare ' +
-                (this.state.currentItem[2].length >= 2 ? '' : 'hide')
-              }
-              onClick={e => this.styleSelect(e, 1)}
-            />
-            <img
-              ref="stylesquare3"
-              alt="style3"
-              src={this.state.currentItem[2][2]}
-              className={
-                'styleSquare ' +
-                (this.state.currentItem[2].length >= 3 ? '' : 'hide')
-              }
-              onClick={e => this.styleSelect(e, 2)}
-            />
-            <img
-              ref="stylesquare4"
-              alt="style4"
-              src={this.state.currentItem[2][3]}
-              className={
-                'styleSquare ' +
-                (this.state.currentItem[2].length >= 4 ? '' : 'hide')
-              }
-              onClick={e => this.styleSelect(e, 3)}
-            />
-            <img
-              ref="stylesquare5"
-              alt="style5"
-              src={this.state.currentItem[2][4]}
-              className={
-                'styleSquare ' +
-                (this.state.currentItem[2].length >= 5 ? '' : 'hide')
-              }
-              onClick={e => this.styleSelect(e, 4)}
-            />
+            {styleSquares}
           </Grid>
         </Grid>
       </div>

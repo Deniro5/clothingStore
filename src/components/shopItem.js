@@ -56,23 +56,24 @@ class Shop extends Component {
             className="shopItemName"
             onClick={this.toProductPage.bind(this, this.props.id)}
           >
-            {' '}
-            {this.props.name}{' '}
+            {this.props.name}
           </p>
           <p
             className="shopItemDescription"
             onClick={this.toProductPage.bind(this, this.props.id)}
           >
-            {' '}
-            {this.props.desc}{' '}
+            {this.props.desc}
           </p>
-          <p className= {"shopItemPrice " + (this.props.isCarousel ? 'hide' : '')}> {this.props.price} </p>
-          <button
-             onClick={this.toProductPage.bind(this, this.props.id)}
-            className= {"shopItemBtn " + (this.props.isCarousel ? 'hide' : '')}
+          <p
+            className={'shopItemPrice ' + (this.props.isCarousel ? 'hide' : '')}
           >
-            {' '}
-            Add To Cart{' '}
+            {this.props.price}
+          </p>
+          <button
+            onClick={this.toProductPage.bind(this, this.props.id)}
+            className={'shopItemBtn ' + (this.props.isCarousel ? 'hide' : '')}
+          >
+            Add To Cart
           </button>
           <Modal
             aria-labelledby="simple-modal-title"

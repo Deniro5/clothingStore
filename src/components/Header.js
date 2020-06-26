@@ -10,14 +10,14 @@ import { withRouter } from 'react-router-dom';
 import products from './products';
 import Cart from './Cart';
 import Modal from '@material-ui/core/modal';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const styles= {
-  link : {
-    color: "black",
-    textDecoration:"none",
+const styles = {
+  link: {
+    color: 'black',
+    textDecoration: 'none'
   }
-}
+};
 
 class Header extends Component {
   state = {
@@ -25,7 +25,7 @@ class Header extends Component {
     selected: '',
     searchinput: '',
     searchresult: [],
-    showCart: false,
+    showCart: false
   };
 
   showmenu = () => {
@@ -108,15 +108,15 @@ class Header extends Component {
 
   handleOpenCart = () => {
     this.setState({
-      showCart: true,
-    })
-  }
+      showCart: true
+    });
+  };
 
   handleCloseCart = () => {
     this.setState({
-      showCart: false,
-    })
-  }
+      showCart: false
+    });
+  };
 
   render() {
     let searchResults = [];
@@ -133,11 +133,9 @@ class Header extends Component {
             src={this.state.searchresult[count][2][0]}
           />
           <p className="searchResultsSegmentName">
-            {' '}
             {this.state.searchresult[count][0]}
           </p>
           <p className="searchResultsSegmentInfo">
-            {' '}
             {this.state.searchresult[count][1]}
           </p>
         </div>
@@ -158,8 +156,7 @@ class Header extends Component {
         <p
           style={{ fontWeight: 'bold', textAlign: 'center', marginTop: '-5px' }}
         >
-          {' '}
-          Select Category{' '}
+          Select Category
         </p>
         <ExpansionPanel className="mobileMenuSegment">
           <ExpansionPanelSummary
@@ -171,23 +168,20 @@ class Header extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <div className="mobileMenuContent">
-              {' '}
               <p onClick={this.navigate.bind(this, 'accessories')}>
-                Accessories{' '}
-              </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>{' '}
-              <p>Placeholder</p>{' '}
+                Accessories
+              </p>
+              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>
+              <p>Placeholder</p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>{' '}
-              <p> Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>
+              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>
+              <p> Placeholder </p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>{' '}
-              <p>Placeholder </p> <p>Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>
+              <p>Placeholder </p> <p>Placeholder </p>
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -201,23 +195,20 @@ class Header extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <div className="mobileMenuContent">
-              {' '}
               <p onClick={this.navigate.bind(this, 'accessories')}>
-                Accessories{' '}
-              </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>{' '}
-              <p>Placeholder</p>{' '}
+                Accessories
+              </p>
+              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>
+              <p>Placeholder</p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>{' '}
-              <p> Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>
+              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>
+              <p> Placeholder </p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>{' '}
-              <p>Placeholder </p> <p>Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>
+              <p>Placeholder </p> <p>Placeholder </p>
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -231,23 +222,20 @@ class Header extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <div className="mobileMenuContent">
-              {' '}
               <p onClick={this.navigate.bind(this, 'accessories')}>
-                Accessories{' '}
-              </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>{' '}
-              <p>Placeholder</p>{' '}
+                Accessories
+              </p>
+              <p onClick={this.navigate.bind(this, 'shirts')}>Shirts</p>
+              <p>Placeholder</p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>{' '}
-              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>{' '}
-              <p> Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'hoodies')}>Hoodies </p>
+              <p onClick={this.navigate.bind(this, 'shoes')}> Shoes </p>
+              <p> Placeholder </p>
             </div>
             <div className="mobileMenuContent">
-              {' '}
-              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>{' '}
-              <p>Placeholder </p> <p>Placeholder </p>{' '}
+              <p onClick={this.navigate.bind(this, 'jeans')}>Jeans </p>
+              <p>Placeholder </p> <p>Placeholder </p>
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -255,49 +243,24 @@ class Header extends Component {
     );
 
     const menu = (
-    <Fragment>
-      <Link style = {styles.link} to = "/shop/accessories">
-      <p
-        className="headerMenuSegment"
-      >
-        {' '}
-        Accessories{' '}
-      </p>
-      </Link>
-      <Link style = {styles.link} to = "/shop/hoodies">
-      <p
-        className="headerMenuSegment"
-      >
-        {' '}
-        Hoodies{' '}
-      </p>
-      </Link>
-      <Link style = {styles.link} to = "/shop/jeans">
-      <p
-        className="headerMenuSegment"
-      >
-        {' '}
-        Jeans{' '}
-      </p>
-      </Link>
-      <Link style = {styles.link} to = "/shop/shirts">
-      <p
-        className="headerMenuSegment"
-      >
-        {' '}
-        shirts{' '}
-      </p>
-      </Link>
-      <Link style = {styles.link} to = "/shop/shoes">
-      <p
-        className="headerMenuSegment"
-      >
-        {' '}
-        Shoes{' '}
-      </p>
-      </Link>
-    </Fragment>
-    )
+      <Fragment>
+        <Link style={styles.link} to="/shop/accessories">
+          <p className="headerMenuSegment"> Accessories </p>
+        </Link>
+        <Link style={styles.link} to="/shop/hoodies">
+          <p className="headerMenuSegment"> Hoodies </p>
+        </Link>
+        <Link style={styles.link} to="/shop/jeans">
+          <p className="headerMenuSegment"> Jeans </p>
+        </Link>
+        <Link style={styles.link} to="/shop/shirts">
+          <p className="headerMenuSegment"> shirts </p>
+        </Link>
+        <Link style={styles.link} to="/shop/shoes">
+          <p className="headerMenuSegment"> Shoes </p>
+        </Link>
+      </Fragment>
+    );
 
     return (
       <div className="headerContainer">
@@ -319,8 +282,7 @@ class Header extends Component {
               }
               onClick={this.setSelected.bind(this, 1)}
             >
-              {' '}
-              MEN{' '}
+              MEN
             </p>
             <div
               className={
@@ -341,8 +303,7 @@ class Header extends Component {
               }
               onClick={this.setSelected.bind(this, 2)}
             >
-              {' '}
-              WOMEN{' '}
+              WOMEN
             </p>
             <div
               style={{ left: '-33px' }}
@@ -350,7 +311,7 @@ class Header extends Component {
                 'headerMenu ' + (this.state.selected === 2 ? '' : 'hide')
               }
             >
-             {menu}
+              {menu}
             </div>
           </div>
           <div
@@ -364,8 +325,7 @@ class Header extends Component {
               }
               onClick={this.setSelected.bind(this, 3)}
             >
-              {' '}
-              KIDS{' '}
+              KIDS
             </p>
             <div
               className={
@@ -383,7 +343,6 @@ class Header extends Component {
           <Drawer anchor="top" open={this.state.top} onClose={this.hideMenu}>
             {fullList('top')}
           </Drawer>
-
           <div className="searchContainer">
             <input
               ref="searchinput"
@@ -401,7 +360,7 @@ class Header extends Component {
             alt="placeholder"
             className="subHeaderIcon"
             src="imgs/cart.png"
-            onClick = {this.handleOpenCart}
+            onClick={this.handleOpenCart}
           />
           <Modal
             aria-labelledby="simple-modal-title"
@@ -416,8 +375,7 @@ class Header extends Component {
                 src="imgs/close.png"
                 className="shopItemModalClose"
               />
-    
-                <Cart handleClose = {this.handleCloseCart.bind(this)}/>
+              <Cart handleClose={this.handleCloseCart.bind(this)} />
             </div>
           </Modal>
         </div>

@@ -31,6 +31,8 @@ const productDescription = props => {
         item = products['Shoes'][index1];
       }
       setItem(item);
+      setCurrSize('S');
+      setCurrStyle(0);
       setIsLoaded(true);
     }
   }, [props.match.params.id]);

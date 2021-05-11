@@ -12,7 +12,7 @@
     "express-session": "1.15.6",
     "history": "4.7.2",
     "jsonwebtoken": "8.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "material-ui": "^0.20.2",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.11",

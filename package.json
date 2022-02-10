@@ -16,7 +16,7 @@
     "material-ui": "^0.20.2",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.11",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "1.18.2",
     "react": "16.8.4",
     "react-dom": "16.8.4",

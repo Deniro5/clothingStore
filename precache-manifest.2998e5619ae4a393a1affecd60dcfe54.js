@@ -1,22 +1,22 @@
 self.__precacheManifest = [
   {
-    "revision": "3e5ed14b220e5ba785ce",
-    "url": "/clothingStore/static/css/main.e06e6fdd.chunk.css"
+    "revision": "35cc1d1c754a9a8a02ca",
+    "url": "/clothingStore/static/css/main.da4d6e06.chunk.css"
   },
   {
-    "revision": "3e5ed14b220e5ba785ce",
-    "url": "/clothingStore/static/js/main.d6875b57.chunk.js"
+    "revision": "35cc1d1c754a9a8a02ca",
+    "url": "/clothingStore/static/js/main.a00bc248.chunk.js"
   },
   {
     "revision": "794cb80c756da411d890",
     "url": "/clothingStore/static/js/runtime~main.94cf2f85.js"
   },
   {
-    "revision": "b27d7b08ddb299765ab3",
-    "url": "/clothingStore/static/css/2.b8088515.chunk.css"
+    "revision": "e69207e5324d5505be93",
+    "url": "/clothingStore/static/css/2.ef60c950.chunk.css"
   },
   {
-    "revision": "b27d7b08ddb299765ab3",
+    "revision": "e69207e5324d5505be93",
     "url": "/clothingStore/static/js/2.6dc5c0d4.chunk.js"
   },
   {
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/clothingStore/static/media/revicons.17629a5d.ttf"
   },
   {
-    "revision": "40f542dabf42f34c113f53d8b6d7869f",
+    "revision": "fd05bb346f17bcd5ea537cad688bb9b7",
     "url": "/clothingStore/index.html"
   }
 ];

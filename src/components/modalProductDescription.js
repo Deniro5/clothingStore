@@ -30,7 +30,6 @@ class productDescription extends Component {
   };
 
   styleSelect = (e, style) => {
-    alert(style);
     e.target.className += ' activeStyleSquare';
     this.setState({
       currStyle: style
